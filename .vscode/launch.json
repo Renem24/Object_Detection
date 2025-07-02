@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: uv env",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",          // 현재 열려 있는 스크립트
+            "console": "integratedTerminal",
+            "justMyCode": false,           // 라이브러리 내부까지 디버깅하려면 false
+            "python": "${workspaceFolder}/.venv/bin/python",
+            "cwd": "${fileDirname}"
+        }
+    ]
+}
