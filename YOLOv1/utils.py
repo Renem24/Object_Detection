@@ -92,7 +92,6 @@ def non_max_suppression(bboxes, iou_threshold, threshold, box_format="corners"):
     return bboxes_after_nms
 
 
-## mAP
 def mean_average_precision(
     pred_boxes, true_boxes, iou_threshold=0.5, box_format="midpoint", num_classes=20
 ):
@@ -246,7 +245,7 @@ def get_bboxes(
     all_true_boxes = []
 
     # make sure model is in eval before get bboxes
-    model.eval()
+    # model.eval()
     train_idx = 0
 
     for batch_idx, (x, labels) in enumerate(loader):
@@ -283,7 +282,7 @@ def get_bboxes(
 
             train_idx += 1
 
-    model.train()
+    # model.train()
     return all_pred_boxes, all_true_boxes
 
 

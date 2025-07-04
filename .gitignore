@@ -12,3 +12,6 @@ wheels/
 
 # data
 YOLOv1/data/
+YOLOv1/checkpoints/
+YOLOv1/overfit.pth.tar
+YOLO_byGPT/data/
