@@ -1,18 +1,52 @@
 # YOLO
+---
+
 ## Reference
 - https://arxiv.org/pdf/1506.02640   ← YOLOv1 paper
 - https://arxiv.org/pdf/2304.00501   ← YOLO survey paper
 - https://www.youtube.com/watch?v=n9_XyCGr-MI
 - https://github.com/sangnekim/YOLO-v1-for-studying
-- https://aigong.tistory.com/438
-- https://velog.io/@euisuk-chung/Paper-Review-A-COMPREHENSIVE-REVIEW-OF-YOLO-ARCHITECTURES-IN-COMPUTER-VISION-FROM-YOLOV1-TO-YOLOV8-ANDYOLO-NAS
-- https://velog.io/@joon10266/Object-Detection1-stage-YoloV1
-- https://gaussian37.github.io/dl-concept-inception/
 - https://github.com/tanjeffreyz/yolo-v1   ← code implementation
 - https://github.com/sangnekim/YOLO-v1-for-studying   ← code implementation
 - https://github.com/motokimura/yolo_v1_pytorch   ← code implementation
 
-## 
+---
+## How to run MODEL?
+We use `argparse` to run python files with arguments. 
+
+### Train
+
+```
+uv run python3 yolov1_torch/train.py \
+	--use_csv  \
+	--train_csv /mnt/ssd/lym/cvipl/dataset/PascalVOC_YOLO/100examples.csv \
+	--val_csv /mnt/ssd/lym/cvipl/dataset/PascalVOC_YOLO/test.csv \
+	--img_dir /mnt/ssd/lym/cvipl/dataset/PascalVOC_YOLO/images \
+	--label_dir /mnt/ssd/lym/cvipl/dataset/PascalVOC_YOLO/labels \
+	--epochs 1000
+```
+
+### Test
+
+```
+uv run python3 yolov1_torch/test.py \
+	--test_csv /mnt/ssd/lym/cvipl/dataset/PascalVOC_YOLO/test.csv \
+	--img_dir /mnt/ssd/lym/cvipl/dataset/PascalVOC_YOLO/images \
+	--label_dir /mnt/ssd/lym/cvipl/dataset/PascalVOC_YOLO/labels 
+```
+
+### Inference
+
+```
+uv run python3 yolov1_torch/inference.py \
+    --weights_path yolov1_torch/checkpoints/best.pth \
+    --input_dir /mnt/ssd/lym/cvipl/dataset/PascalVOC_YOLO/examples \
+    --output_dir yolov1_torch/outputs
+```
+
+---
+
+
 
 ## LOSS Explained
 

@@ -1,5 +1,7 @@
 # Python-generated files
-__pycache__/
+yolov1_torch/__pycache__/
+detr/__pycache__/
+GroundingDINO/__pycache__/
 *.py[oc]
 build/
 dist/
@@ -10,8 +12,11 @@ wheels/
 .venv
 
 
-# data
-YOLOv1/data/
-YOLOv1/checkpoints/
-YOLOv1/overfit.pth.tar
-YOLO_byGPT/data/
+.vscode
+
+
+# data & checkpoints
+data/
+yolov1_torch/checkpoints/
+detr/checkpoints/
+GroundingDINO/checkpoints/
