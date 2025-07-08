@@ -39,8 +39,8 @@ uv run python3 yolov1_torch/test.py \
 
 ```
 uv run python3 yolov1_torch/inference.py \
-    --weights_path yolov1_torch/checkpoints/best.pth \
-    --input_dir /mnt/ssd/lym/cvipl/dataset/PascalVOC_YOLO/examples \
+    --weights_path yolov1_torch/checkpoints/yolo_1.pth \
+    --input_dir yolov1_torch/sample_images \
     --output_dir yolov1_torch/outputs
 ```
 
