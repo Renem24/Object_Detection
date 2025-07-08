@@ -40,7 +40,7 @@ uv run python3 yolov1_torch/test.py \
 ```
 uv run python3 yolov1_torch/inference.py \
     --weights_path yolov1_torch/checkpoints/yolo_1.pth \
-    --input_dir yolov1_torch/sample_images \
+    --input_dir sample_images \
     --output_dir yolov1_torch/outputs
 ```
 
