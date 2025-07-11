@@ -17,11 +17,13 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends \
     rm -rf /var/lib/apt/lists/*
 
 # Set the working directory for all the subsequent Dockerfile instructions.
-WORKDIR /opt/program
+WORKDIR /workspace
 
 RUN git clone https://github.com/IDEA-Research/GroundingDINO.git
 
-RUN mkdir weights ; cd weights ; wget -q https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha/groundingdino_swint_ogc.pth ; cd ..
+RUN git clone https://github.com/facebookresearch/dinov2.git
+
+# RUN mkdir weights ; cd weights ; wget -q https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha/groundingdino_swint_ogc.pth ; cd ..
 
 RUN conda install -c "nvidia/label/cuda-12.1.1" cuda -y
 ENV CUDA_HOME=$CONDA_PREFIX
@@ -32,4 +34,12 @@ RUN cd GroundingDINO/ && python -m pip install .
 
 COPY docker_test.py docker_test.py
 
-CMD [ "python", "docker_test.py" ]
+RUN cd /workspace/dinov2/ 
+
+RUN apt-get update && apt-get install -y \
+    git \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+
+# CMD [ "python", "docker_test.py" ]
